@@ -7,7 +7,7 @@ import { TodosContext } from "../page"
 const TodoList = () => {
   const [todos, settodos] = useContext(TodosContext)
   const fetcher = (...args) => fetch(...args).then(res => res.json())
-  const { data, error, isLoading } = useSWR('http://127.0.0.1:8000/todo/v1/todos/', fetcher)
+  const { data, error, isLoading } = useSWR('https://todo-api-v41j.onrender.com/todo/v1/todos/', fetcher)
   useEffect(()=>{
     if(data){settodos(data)}
   }, [settodos, data])

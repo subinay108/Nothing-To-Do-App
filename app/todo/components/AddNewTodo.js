@@ -12,7 +12,7 @@ const AddNewTodo = ({ handleClose}) => {
         "description": description,
       };
   
-      const response = await fetch('http://localhost:8000/todo/v1/todos/', {
+      const response = await fetch('https://todo-api-v41j.onrender.com/todo/v1/todos/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const AddNewTodo = ({ handleClose}) => {
       console.log('Newly Created Todo:', newTodo);
       
       // mutate the 'newTodo' 
-      mutate('http://localhost:8000/todo/v1/todos/', (existingTodo = []) => {
+      mutate('https://todo-api-v41j.onrender.com/todo/v1/todos/', (existingTodo = []) => {
         return [...existingTodo, newTodo]
       }, false)
 

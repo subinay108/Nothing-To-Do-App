@@ -20,7 +20,7 @@ const TodoItem = ({todo}) => {
     const updatedTodoData = {"completed": checked, "last_modified": Math.floor(Date.now()/1000).toString()}
 
     try {
-      const response = await fetch(`http://localhost:8000/todo/v1/todos/${todo.id}/`, {
+      const response = await fetch(`https://todo-api-v41j.onrender.com/todo/v1/todos/${todo.id}/`, {
         method: 'PATCH', // or 'PATCH' depending on your API's requirements
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const TodoItem = ({todo}) => {
       }
   
       // If successful, update the todo in the UI and mutate the SWR cache
-      mutate('http://localhost:8000/todo/v1/todos/', (existingTodos = []) => {
+      mutate('https://todo-api-v41j.onrender.com/todo/v1/todos/', (existingTodos = []) => {
         return existingTodos.map(item => (item.id === todo.id ? Object.assign(item, updatedTodoData) : item));
       }, false);
   
