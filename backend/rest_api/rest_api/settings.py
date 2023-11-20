@@ -27,7 +27,7 @@ SECRET_KEY = '_9w=*mq^e1rxsdlap3b$wjjtmd^u=)(*&uszh%i^bs(+%1m$@g'
 # DEBUG = True
 DEBUG = False # production
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'todo-api-v41j.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'todo-api-v41j.onrender.com', '*']
 
 
 # Application definition
@@ -131,6 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS policy
 CORS_ALLOWED_ORIGINS = [
     'https://nothing-todo-app.netlify.app',
+    'https://localhost:3000',
 ]
 
 
