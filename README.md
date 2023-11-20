@@ -1,5 +1,5 @@
 This is a simple To Do App created using NextJS at frontend and django at backend.
-Take a peek @
+Take a peek @https://nothing-todo-app.netlify.app/
 
 ## Getting Started
 

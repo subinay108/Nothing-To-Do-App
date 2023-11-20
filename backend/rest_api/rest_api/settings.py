@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4=hv0)%(&x#q1#j@@b_41w5gbzgx0pil*_h&t#ml&o7^-&tnd)'
+SECRET_KEY = '_9w=*mq^e1rxsdlap3b$wjjtmd^u=)(*&uszh%i^bs(+%1m$@g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False # production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -51,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'rest_api.urls'
@@ -129,8 +130,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS policy
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Your Next.js frontend URL
-    "http://192.168.94.78:3000", # my mobile wifi 
-    "http://127.0.0.1:5500",
-    "http://192.168.94.78:5500"
+    'https://nothing-todo-app.netlify.app',
 ]
+
+
+# session cookie secure
+# SESSION_COOKIE_SECURE = True
+
+# csrf cookie secure
+# CSRF_COOKIE_SECURE = True
+
+# secure ssl redirect
+# SECURE_SSL_REDIRECT = True
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# CSRF_COOKIE_SECURE = True
+
+# SECURE_SSL_REDIRECT = False
