@@ -12,12 +12,12 @@ const TodoItem = ({todo}) => {
   function openDescription(e){setisDescriptionOpen(true)}
   function closeDescription(e){setisDescriptionOpen(false)}
   function handleChange(e){
+    updateTodo(!checked)
     setchecked(!checked)
-    updateTodo()
   }
 
-  const updateTodo = async () => {
-    const updatedTodoData = {"completed": checked, "last_modified": Math.floor(Date.now()/1000).toString()}
+  const updateTodo = async (isCompleted) => {
+    const updatedTodoData = {"completed": isCompleted, "last_modified": Math.floor(Date.now()/1000).toString()}
 
     try {
       const response = await fetch(`https://todo-api-v41j.onrender.com/todo/v1/todos/${todo.id}/`, {
