@@ -11,7 +11,7 @@ const Description = ({todo, handleClose, checked, handleChange}) => {
 
   const deleteTodo = async ()=>{
     try {
-      const response = await fetch(`http://localhost:8000/todo/v1/todos/${todo.id}/`, {
+      const response = await fetch(`https://todo-api-v41j.onrender.com/todo/v1/todos/${todo.id}/`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ const Description = ({todo, handleClose, checked, handleChange}) => {
       }
   
       // If successful, remove the todo from the UI and mutate the SWR cache
-      mutate('http://localhost:8000/todo/v1/todos/', (existingTodos = []) => {
+      mutate('https://todo-api-v41j.onrender.com/todo/v1/todos/', (existingTodos = []) => {
         return existingTodos.filter(item => item.id !== todo.id);
       }, false);
       
