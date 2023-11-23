@@ -52,7 +52,7 @@ const AddNewTodo = ({ handleClose}) => {
   }
   
   return (
-    <div className="fixed top-0 left-0 z-10 backdrop-blur-sm w-screen h-screen flex justify-center items-center">
+    <div className="fixed top-0 left-0 backdrop-blur-sm w-screen h-screen flex justify-center items-center" style={{zIndex: 5}}>
       <div className="bg-amber-100 border-2 border-black rounded-xl text-center p-4">
         AddNewTodo
         <form onSubmit={onSubmit}>

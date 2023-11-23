@@ -30,7 +30,7 @@ const TodoPage = () => {
             
             {isOpen && <AddNewTodo handleClose={addNewTodo}/>}  
           </TodosContext.Provider>
-          <button onClick={addNewTodo} className='fixed bottom-[80px] bg-[#123456] p-2 px-4 text-amber-100 rounded-full z-10' style={{zIndex: '5'}}>
+          <button onClick={addNewTodo} className='fixed bottom-[80px] bg-[#123456] p-2 px-4 text-amber-100 rounded-full' style={{zIndex: '5'}}>
             {isOpen ? <FontAwesomeIcon icon={faXmark}/> : 'Add New Todo'} 
           </button>
         </div>
