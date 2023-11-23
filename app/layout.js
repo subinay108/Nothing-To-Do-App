@@ -15,7 +15,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + " flex h-screen min-h-screen flex-col"}>{children}</body>
+      <body className={inter.className + " flex h-screen min-h-screen flex-col text-zinc-950"}>{children}</body>
     </html>
   )
 }
